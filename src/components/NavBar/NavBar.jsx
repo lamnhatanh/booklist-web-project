@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { MenuItems } from "./MenuItems";
 import { Button } from "../Button";
 import "./NavBar.css";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [state, setState] = useState(false);
@@ -20,7 +21,7 @@ const NavBar = () => {
     <>
       <nav className="NavbarItems">
         <h1 className="navbar-logo">
-          ACKBooks <i class="fa-solid fa-bookmark"></i>
+          ACKBooks <i className="fa-solid fa-bookmark"></i>
         </h1>
         <div className="menu-icon" onClick={handleClick}>
           <i className={state ? "fas fa-times" : "fas fa-bars"}></i>
@@ -36,7 +37,9 @@ const NavBar = () => {
             );
           })}
         </ul>
-        <Button>Sign Up</Button>
+        <Link to="/signup">
+          <Button>Sign up</Button>
+        </Link>
       </nav>
     </>
   );
